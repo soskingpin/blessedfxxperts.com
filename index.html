@@ -1,212 +1,200 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>BlessedFXXperts | Forex Academy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-  <style>
-    * { margin: 0; padding: 0; box-sizing: border-box; }
-    body {
-      font-family: 'Montserrat', sans-serif;
-      background-color: #000;
-      color: #fff;
-      overflow-x: hidden;
-    }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
 
-    /* Hero Section with Video */
-    header {
-      position: relative;
-      height: 100vh;
-      overflow: hidden;
-    }
+body {
+  font-family: 'Montserrat', sans-serif;
+  background-color: #000;
+  color: #fff;
+  overflow-x: hidden;
+}
 
-    header video {
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      z-index: 0;
-    }
+header {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
 
-    header::before {
-      content: "";
-      position: absolute;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
-      background: rgba(0, 0, 0, 0.7);
-      z-index: 1;
-    }
+header video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
 
-    .hero {
-      position: relative;
-      z-index: 2;
-      height: 100%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-      padding: 0 20px;
-    }
+header::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.7);
+  z-index: 1;
+}
 
-    .hero h1 {
-      font-size: 3rem;
-      color: #ffd700;
-      margin-bottom: 1rem;
-      text-shadow: 0 0 15px #ffd700aa;
-    }
+.hero {
+  position: relative;
+  z-index: 2;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  padding: 0 20px;
+}
 
-    .hero p {
-      font-size: 1.2rem;
-      color: #eee;
-      margin-bottom: 1.5rem;
-    }
+.hero h1 {
+  font-size: 3rem;
+  color: #ffd700;
+  margin-bottom: 1rem;
+  text-shadow: 0 0 15px #ffd700aa;
+}
 
-    .btn {
-      background-color: #ffd700;
-      color: #000;
-      padding: 0.8rem 1.5rem;
-      border-radius: 30px;
-      text-decoration: none;
-      font-weight: bold;
-      transition: 0.3s;
-    }
+.hero p {
+  font-size: 1.2rem;
+  color: #eee;
+  margin-bottom: 1.5rem;
+}
 
-    .btn:hover { background-color: #e5c100; }
+.btn {
+  background-color: #ffd700;
+  color: #000;
+  padding: 0.8rem 1.5rem;
+  border-radius: 30px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: 0.3s;
+  cursor: pointer;
+}
 
-    section {
-      padding: 3rem 1rem;
-      max-width: 1200px;
-      margin: auto;
-    }
+.btn:hover {
+  background-color: #e5c100;
+}
 
-    .section-title {
-      font-size: 2rem;
-      color: #ffd700;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
+section {
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
 
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-      gap: 1.5rem;
-    }
+.section-title {
+  font-size: 2rem;
+  color: #ffd700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
 
-    .card {
-      background: #111;
-      padding: 2rem;
-      border-radius: 10px;
-      transition: 0.3s ease;
-    }
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
 
-    .card:hover {
-      transform: translateY(-5px);
-      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-    }
+.card {
+  background: #111;
+  padding: 2rem;
+  border-radius: 10px;
+  transition: 0.3s ease;
+}
 
-    .card h3 { color: #ffd700; margin-bottom: 1rem; }
-    .card p { color: #ccc; }
-    .price { color: #27ae60; font-weight: bold; margin-top: 1rem; }
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+}
 
-    .contact-icons {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 2rem;
-      margin-top: 2rem;
-    }
+.card h3 {
+  color: #ffd700;
+  margin-bottom: 1rem;
+}
 
-    .contact-icons a {
-      color: #ffd700;
-      font-size: 2rem;
-      transition: 0.3s;
-    }
+.card p {
+  color: #ccc;
+}
 
-    .contact-icons a:hover { color: #fff; }
+.price {
+  color: #27ae60;
+  font-weight: bold;
+  margin-top: 1rem;
+}
 
-    footer {
-      text-align: center;
-      padding: 2rem 1rem;
-      background: #111;
-      font-size: 0.9rem;
-      color: #aaa;
-    }
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
+  margin-top: 2rem;
+}
 
-    @media (max-width: 600px) {
-      .hero h1 { font-size: 2rem; }
-      .hero p { font-size: 1rem; }
-    }
-  </style>
-</head>
-<body>
+.contact-icons a {
+  color: #ffd700;
+  font-size: 2rem;
+  transition: 0.3s;
+}
 
-<!-- Hero Section -->
-<header>
-  <!-- 🎥 Candlestick background video -->
-  <video autoplay muted loop>
-    <source src="https://cdn.pixabay.com/vimeo/573399148/Forex%20Candlestick%20Trading%20Chart.mp4?width=1280&hash=68d9a38b1f1f9bb6e986351df046857bfde0aeb4" type="video/mp4">
-    Your browser does not support the video tag.
-  </video>
+.contact-icons a:hover {
+  color: #fff;
+}
 
-  <div class="hero">
-    <h1>BlessedFXXperts</h1>
-    <p>Master Forex. Master Your Life.</p>
-    <a href="#courses" class="btn">Join Now</a>
-  </div>
-</header>
+footer {
+  text-align: center;
+  padding: 2rem 1rem;
+  background: #111;
+  font-size: 0.9rem;
+  color: #aaa;
+}
 
-<!-- Courses Section -->
-<section id="courses">
-  <h2 class="section-title">Courses</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>Basics</h3>
-      <p>Understand the foundation of Forex markets, pips, charts, indicators & psychology.</p>
-      <p class="price">$65</p>
-    </div>
-    <div class="card">
-      <h3>Full Mentorship</h3>
-      <p>Advanced price action, strategies, risk management, signals & funded account prep.</p>
-      <p class="price">$150</p>
-    </div>
-  </div>
-</section>
+/* Popup Style */
+.popup {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.8);
+  z-index: 999;
+  justify-content: center;
+  align-items: center;
+}
 
-<!-- Services Section -->
-<section id="services">
-  <h2 class="section-title">VIP Services</h2>
-  <div class="grid">
-    <div class="card">
-      <h3>VIP Access</h3>
-      <p>Daily signals, private mentorship, live trading rooms, capital scaling & exclusive groups.</p>
-      <ul>
-        <li class="price">Weekly: $20</li>
-        <li class="price">Monthly: $45</li>
-        <li class="price">Lifetime: $1,000</li>
-      </ul>
-    </div>
-  </div>
-</section>
+.popup-content {
+  background: #111;
+  padding: 2rem;
+  border-radius: 10px;
+  text-align: center;
+  color: #fff;
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+  max-width: 90%;
+}
 
-<!-- Contact -->
-<section id="contact">
-  <h2 class="section-title">Contact Us</h2>
-  <div class="contact-icons">
-    <a href="https://wa.me/263789385081" target="_blank"><i class="fab fa-whatsapp"></i></a>
-    <a href="mailto:Bdpvtltd1@gmail.com"><i class="fas fa-envelope"></i></a>
-    <a href="https://youtube.com/@blessingfxguru?si=jrrsc4mTZpiOwGQx" target="_blank"><i class="fab fa-youtube"></i></a>
-    <a href="https://www.facebook.com/share/16kgW17azL/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook"></i></a>
-    <a href="https://www.instagram.com/blessing_forex_xperts/profilecard/?igsh=MWtid2M5dXhkZW8zdg==" target="_blank"><i class="fab fa-instagram"></i></a>
-  </div>
-</section>
+.popup-content h3 {
+  color: #ffd700;
+  margin-bottom: 1rem;
+}
 
-<footer>
-  &copy; 2025 BlessedFXXperts. All rights reserved.
-</footer>
+.popup-content p {
+  margin: 0.5rem 0;
+}
 
-</body>
-</html>
+.close-btn {
+  margin-top: 1.5rem;
+  background: #ffd700;
+  color: #000;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+@media (max-width: 600px) {
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
+}
