@@ -4,9 +4,126 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Your Forex Academy</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0; padding: 0; background: #f4f4f4;
+      color: #333;
+    }
+    header {
+      background: #222;
+      color: white;
+      text-align: center;
+      padding: 2rem 1rem;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2.5rem;
+    }
+    header p {
+      font-size: 1.2rem;
+      margin-top: 0.5rem;
+    }
+    .container {
+      max-width: 900px;
+      margin: 2rem auto;
+      background: white;
+      padding: 1rem 2rem 2rem;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+    h2 {
+      border-bottom: 3px solid #222;
+      padding-bottom: 0.3rem;
+      margin-bottom: 1rem;
+    }
+    .course-card {
+      border: 1px solid #ddd;
+      padding: 1rem;
+      margin-bottom: 1rem;
+      border-radius: 6px;
+    }
+    .course-card h3 {
+      margin-top: 0;
+    }
+    .price {
+      font-weight: bold;
+      color: #27ae60;
+      margin-top: 0.5rem;
+    }
+    .btn {
+      display: inline-block;
+      background: #27ae60;
+      color: white;
+      padding: 0.5rem 1rem;
+      border-radius: 5px;
+      text-decoration: none;
+      margin-top: 0.7rem;
+    }
+    .btn:hover {
+      background: #219150;
+    }
+    .performance ul {
+      list-style: none;
+      padding: 0;
+    }
+    .performance li {
+      background: #e2f0d9;
+      margin-bottom: 0.5rem;
+      padding: 0.7rem 1rem;
+      border-radius: 4px;
+      font-weight: bold;
+    }
+    @media (max-width: 600px) {
+      header h1 {
+        font-size: 1.8rem;
+      }
+      .container {
+        margin: 1rem;
+        padding: 1rem;
+      }
+    }
+  </style>
 </head>
 <body>
-  <h1>Welcome to Your Forex Academy</h1>
-  <p>This is your homepage. Build your forex education site here!</p>
+
+<header>
+  <h1>Your Forex Academy</h1>
+  <p>Master Forex Trading Like a Kingpin</p>
+</header>
+
+<div class="container">
+  <section class="courses">
+    <h2>Courses</h2>
+    <div class="course-card">
+      <h3>Beginner Fundamentals</h3>
+      <p>Learn the basics of forex trading, market analysis, and risk management.</p>
+      <p class="price">$15 / month</p>
+      <a href="#" class="btn">Enroll Now</a>
+    </div>
+    <div class="course-card">
+      <h3>Advanced Strategies</h3>
+      <p>Master advanced trading techniques and algorithmic strategies.</p>
+      <p class="price">$50 / month</p>
+      <a href="#" class="btn">Enroll Now</a>
+    </div>
+    <div class="course-card">
+      <h3>Kingpin Mastery</h3>
+      <p>Elite program with 1-on-1 mentoring and exclusive strategies.</p>
+      <p class="price">$100 / month</p>
+      <a href="#" class="btn">Enroll Now</a>
+    </div>
+  </section>
+
+  <section class="performance">
+    <h2>Trading Performance</h2>
+    <ul>
+      <li>Total Profit: $12,847</li>
+      <li>Monthly Profit: +24.3%</li>
+      <li>Win Rate: 87.4%</li>
+    </ul>
+  </section>
+</div>
+
 </body>
 </html>
