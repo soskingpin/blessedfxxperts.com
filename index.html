@@ -1,73 +1,62 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BlessedFXXperts</title>
-  <link rel="stylesheet" href="style.css" />
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header>
-    <div class="overlay"></div>
-    <video autoplay muted loop playsinline>
-      <source src="https://cdn.pixabay.com/video/2023/07/26/176758-846168505_large.mp4" type="video/mp4">
-    </video>
-    <div class="hero">
-      <h1>BlessedFXXperts</h1>
-      <p>Master Forex. Master Your Life.</p>
-      <button class="btn" onclick="showPopup()">Join Now</button>
-    </div>
+
+  <header class="hero">
+    <h1>BlessedFXXperts</h1>
+    <p>Master Forex. Master Your Life.</p>
+    <button onclick="openPopup()">Join Now</button>
   </header>
 
-  <section>
-    <h2 class="section-title">Courses</h2>
-    <div class="grid">
-      <div class="card">
+  <main>
+    <section class="card">
+      <h2>Courses</h2>
+
+      <div>
         <h3>Basics</h3>
         <p>Understand the foundation of Forex markets, pips, charts, indicators & psychology.</p>
         <p class="price">$65</p>
       </div>
-      <div class="card">
+
+      <div>
         <h3>Full Mentorship</h3>
         <p>Advanced price action, strategies, risk management, signals & funded account prep.</p>
         <p class="price">$150</p>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h2 class="section-title">VIP Services</h2>
-    <div class="grid">
-      <div class="card">
-        <h3>VIP Access</h3>
-        <p>Daily signals, private mentorship, live trading rooms, capital scaling & exclusive groups.</p>
-        <ul>
-          <li>Weekly: $20</li>
-          <li>Monthly: $45</li>
-          <li>Lifetime: $1,000</li>
-        </ul>
+    <section class="card">
+      <h2>VIP Services</h2>
+      <h3>VIP Access</h3>
+      <p>Daily signals, private mentorship, live trading rooms, capital scaling & exclusive groups.</p>
+      <ul>
+        <li>Weekly: $20</li>
+        <li>Monthly: $45</li>
+        <li>Lifetime: $1,000</li>
+      </ul>
+    </section>
+
+    <section class="card">
+      <h2>Contact Us</h2>
+      <div class="contact-icons">
+        <a href="#"><span>💬</span></a>
+        <a href="#"><span>✉️</span></a>
+        <a href="#"><span>📹</span></a>
+        <a href="#"><span>📘</span></a>
+        <a href="#"><span>📸</span></a>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <section>
-    <h2 class="section-title">Contact Us</h2>
-    <div class="contact-icons">
-      <a href="https://wa.me/263789385081" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      <a href="mailto:Bdpvtltd1@gmail.com"><i class="fas fa-envelope"></i></a>
-      <a href="https://youtube.com/@blessingfxguru?si=jrrsc4mTZpiOwGQx" target="_blank"><i class="fab fa-youtube"></i></a>
-      <a href="https://www.facebook.com/share/16kgW17azL/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook"></i></a>
-      <a href="https://www.instagram.com/blessing_forex_xperts/profilecard/?igsh=MWtid2M5dXhkZW8zdg==" target="_blank"><i class="fab fa-instagram"></i></a>
-    </div>
-  </section>
-
-  <footer>
-    <p>© 2025 BlessedFXXperts. All rights reserved.</p>
-  </footer>
+    <footer>
+      <p>© 2025 BlessedFXXperts. All rights reserved.</p>
+    </footer>
+  </main>
 
   <!-- Payment Popup -->
   <div class="popup" id="popup">
@@ -82,12 +71,14 @@
   </div>
 
   <script>
-    function showPopup() {
-      document.getElementById('popup').style.display = 'flex';
+    function openPopup() {
+      document.getElementById("popup").style.display = "flex";
     }
+
     function closePopup() {
-      document.getElementById('popup').style.display = 'none';
+      document.getElementById("popup").style.display = "none";
     }
   </script>
+
 </body>
 </html>
