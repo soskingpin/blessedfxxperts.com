@@ -3,128 +3,216 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <title>Your Forex Academy</title>
+  <title>Blessed FX Xperts</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      margin: 0; padding: 0; background: #f4f4f4;
-      color: #333;
-    }
-    header {
-      background: #222;
-      color: white;
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    header h1 {
+    /* Global Reset */
+    * {
       margin: 0;
-      font-size: 2.5rem;
+      padding: 0;
+      box-sizing: border-box;
     }
-    header p {
+
+    body {
+      font-family: 'Segoe UI', sans-serif;
+      background: #0d0d0d;
+      color: #f5f5f5;
+      line-height: 1.6;
+    }
+
+    header {
+      position: relative;
+      height: 100vh;
+      width: 100%;
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+    }
+
+    header video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1;
+      opacity: 0.5;
+    }
+
+    .hero {
+      z-index: 2;
+      max-width: 90%;
+      padding: 2rem;
+      animation: fadeIn 2s ease-in;
+    }
+
+    .hero h1 {
+      font-size: 3rem;
+      color: #FFD700;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
       font-size: 1.2rem;
-      margin-top: 0.5rem;
+      margin-bottom: 1.5rem;
     }
-    .container {
-      max-width: 900px;
-      margin: 2rem auto;
-      background: white;
-      padding: 1rem 2rem 2rem;
-      border-radius: 8px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
-    }
-    h2 {
-      border-bottom: 3px solid #222;
-      padding-bottom: 0.3rem;
-      margin-bottom: 1rem;
-    }
-    .course-card {
-      border: 1px solid #ddd;
-      padding: 1rem;
-      margin-bottom: 1rem;
-      border-radius: 6px;
-    }
-    .course-card h3 {
-      margin-top: 0;
-    }
-    .price {
-      font-weight: bold;
-      color: #27ae60;
-      margin-top: 0.5rem;
-    }
+
     .btn {
-      display: inline-block;
-      background: #27ae60;
-      color: white;
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
+      background: #FFD700;
+      color: #000;
+      padding: 0.8rem 1.5rem;
+      border: none;
+      border-radius: 30px;
       text-decoration: none;
-      margin-top: 0.7rem;
+      font-weight: bold;
+      transition: background 0.3s ease;
     }
+
     .btn:hover {
-      background: #219150;
+      background: #e6c200;
     }
+
+    .container {
+      max-width: 1000px;
+      margin: 2rem auto;
+      padding: 0 1rem;
+    }
+
+    h2 {
+      color: #FFD700;
+      margin-bottom: 1rem;
+      font-size: 2rem;
+      border-left: 5px solid #FFD700;
+      padding-left: 1rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+      margin-bottom: 3rem;
+    }
+
+    .card {
+      background: #1a1a1a;
+      border-radius: 10px;
+      padding: 1.5rem;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      animation: slideUp 1s ease forwards;
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.2);
+    }
+
+    .card h3 {
+      color: #FFD700;
+      margin-bottom: 0.5rem;
+    }
+
+    .price {
+      color: #27ae60;
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
+
     .performance ul {
       list-style: none;
       padding: 0;
     }
+
     .performance li {
-      background: #e2f0d9;
-      margin-bottom: 0.5rem;
+      background: #1f1f1f;
       padding: 0.7rem 1rem;
-      border-radius: 4px;
+      margin-bottom: 0.5rem;
+      border-left: 4px solid #27ae60;
       font-weight: bold;
     }
+
+    footer {
+      text-align: center;
+      padding: 1.5rem 0;
+      background: #111;
+      color: #aaa;
+      font-size: 0.9rem;
+    }
+
+    /* Animations */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    @keyframes slideUp {
+      from { transform: translateY(40px); opacity: 0; }
+      to { transform: translateY(0); opacity: 1; }
+    }
+
     @media (max-width: 600px) {
-      header h1 {
-        font-size: 1.8rem;
+      .hero h1 {
+        font-size: 2rem;
       }
-      .container {
-        margin: 1rem;
-        padding: 1rem;
+      .hero p {
+        font-size: 1rem;
       }
     }
   </style>
 </head>
 <body>
 
-<header>
-  <h1>Your Forex Academy</h1>
-  <p>Master Forex Trading Like a Kingpin</p>
-</header>
+  <!-- 🎥 Hero Section with Video -->
+  <header>
+    <video autoplay muted loop>
+      <source src="https://cdn.coverr.co/videos/coverr-forex-trading-3686/1080p.mp4" type="video/mp4">
+    </video>
+    <div class="hero">
+      <h1>Blessed FX Xperts</h1>
+      <p>Master Forex. Trade Like a Pro. Grow Your Bag.</p>
+      <a href="#courses" class="btn">Join Now</a>
+    </div>
+  </header>
 
-<div class="container">
-  <section class="courses">
-    <h2>Courses</h2>
-    <div class="course-card">
-      <h3>Beginner Fundamentals</h3>
-      <p>Learn the basics of forex trading, market analysis, and risk management.</p>
-      <p class="price">$15 / month</p>
-      <a href="#" class="btn">Enroll Now</a>
+  <!-- 📘 Courses -->
+  <div class="container" id="courses">
+    <h2>Our Courses</h2>
+    <div class="cards">
+      <div class="card">
+        <h3>Beginner Bootcamp</h3>
+        <p>Start from zero and understand how forex trading really works.</p>
+        <p class="price">$15 / month</p>
+        <a href="#" class="btn">Enroll</a>
+      </div>
+      <div class="card">
+        <h3>Smart Money Concepts</h3>
+        <p>Learn real institutional trading strategies and break retail limits.</p>
+        <p class="price">$50 / month</p>
+        <a href="#" class="btn">Get Access</a>
+      </div>
+      <div class="card">
+        <h3>1-on-1 Mentorship</h3>
+        <p>Private mentorship to level you up, from a struggling trader to kingpin.</p>
+        <p class="price">$100 / month</p>
+        <a href="#" class="btn">Apply Now</a>
+      </div>
     </div>
-    <div class="course-card">
-      <h3>Advanced Strategies</h3>
-      <p>Master advanced trading techniques and algorithmic strategies.</p>
-      <p class="price">$50 / month</p>
-      <a href="#" class="btn">Enroll Now</a>
-    </div>
-    <div class="course-card">
-      <h3>Kingpin Mastery</h3>
-      <p>Elite program with 1-on-1 mentoring and exclusive strategies.</p>
-      <p class="price">$100 / month</p>
-      <a href="#" class="btn">Enroll Now</a>
-    </div>
-  </section>
 
-  <section class="performance">
-    <h2>Trading Performance</h2>
-    <ul>
-      <li>Total Profit: $12,847</li>
-      <li>Monthly Profit: +24.3%</li>
-      <li>Win Rate: 87.4%</li>
-    </ul>
-  </section>
-</div>
+    <!-- 📊 Performance -->
+    <div class="performance">
+      <h2>Performance Stats</h2>
+      <ul>
+        <li>Total Profit: $13,274</li>
+        <li>Monthly Return: +26.1%</li>
+        <li>Win Rate: 91%</li>
+      </ul>
+    </div>
+  </div>
+
+  <footer>
+    &copy; 2025 Blessed FX Xperts. All rights reserved.
+  </footer>
 
 </body>
 </html>
-j
