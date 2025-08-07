@@ -1,201 +1,192 @@
 <!DOCTYPE html><html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>BlessedFXXperts | Forex Academy</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
   <style>
-    * {margin: 0; padding: 0; box-sizing: border-box;}
-    body {font-family: 'Montserrat', sans-serif; background-color: #000; color: #fff; overflow-x: hidden;}header {
-  height: 100vh;
-  background: url('https://cdn.coverr.co/videos/coverr-forex-trading-3686/1080p.mp4') no-repeat center center/cover;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-align: center;
-  position: relative;
-}
-
-header::before {
-  content: "";
-  position: absolute;
-  top: 0; left: 0; right: 0; bottom: 0;
-  background-color: rgba(0, 0, 0, 0.7);
-  z-index: 1;
-}
-
-.hero {
-  position: relative;
-  z-index: 2;
-  max-width: 90%;
-}
-
-.hero h1 {
-  font-size: 3rem;
-  color: #FFD700;
-  margin-bottom: 1rem;
-}
-
-.hero p {
-  font-size: 1.2rem;
-  margin-bottom: 1.5rem;
-}
-
-.btn {
-  background-color: #FFD700;
-  color: #000;
-  padding: 0.8rem 1.5rem;
-  border-radius: 30px;
-  text-decoration: none;
-  font-weight: bold;
-  transition: 0.3s;
-}
-
-.btn:hover {background-color: #e5c100;}
-
-section {
-  padding: 3rem 1rem;
-  max-width: 1200px;
-  margin: auto;
-}
-
-.section-title {
-  font-size: 2rem;
-  color: #FFD700;
-  text-align: center;
-  margin-bottom: 2rem;
-}
-
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-  gap: 1.5rem;
-}
-
-.card {
-  background: #111;
-  padding: 2rem;
-  border-radius: 10px;
-  transition: 0.3s ease;
-}
-
-.card:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
-}
-
-.card h3 {
-  color: #FFD700;
-  margin-bottom: 1rem;
-}
-
-.card p {color: #ccc;}
-
-.price {color: #27ae60; font-weight: bold; margin: 1rem 0;}
-
-.contact-icons {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 2rem;
-  margin-top: 2rem;
-}
-
-.contact-icons a {
-  color: #FFD700;
-  font-size: 2rem;
-  transition: 0.3s;
-}
-
-.contact-icons a:hover {
-  color: #fff;
-}
-
-footer {
-  text-align: center;
-  padding: 2rem 1rem;
-  background: #111;
-  font-size: 0.9rem;
-  color: #aaa;
-}
-
-@media (max-width: 600px) {
-  .hero h1 {font-size: 2rem;}
-  .hero p {font-size: 1rem;}
-}
-
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      font-family: "Montserrat", sans-serif;
+      background-color: #000;
+      color: #fff;
+      overflow-x: hidden;
+    }
+    header {
+      height: 100vh;
+      background: url("https://images.unsplash.com/photo-1611974789851-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1950&q=80") no-repeat center center/cover;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      position: relative;
+    }
+    header::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      background-color: rgba(0, 0, 0, 0.75);
+      z-index: 1;
+    }
+    .hero {
+      position: relative;
+      z-index: 2;
+      max-width: 90%;
+    }
+    .hero h1 {
+      font-size: 3rem;
+      color: #ffd700;
+      margin-bottom: 1rem;
+      text-shadow: 0 0 10px #ffd700aa;
+    }
+    .hero p {
+      font-size: 1.2rem;
+      margin-bottom: 1.5rem;
+      color: #eee;
+    }
+    .btn {
+      background-color: #ffd700;
+      color: #000;
+      padding: 0.8rem 1.5rem;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: bold;
+      transition: 0.3s;
+    }
+    .btn:hover {
+      background-color: #e5c100;
+    }
+    section {
+      padding: 3rem 1rem;
+      max-width: 1200px;
+      margin: auto;
+    }
+    .section-title {
+      font-size: 2rem;
+      color: #ffd700;
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 1.5rem;
+    }
+    .card {
+      background: #111;
+      padding: 2rem;
+      border-radius: 10px;
+      transition: 0.3s ease;
+    }
+    .card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 0 15px rgba(255, 215, 0, 0.3);
+    }
+    .card h3 {
+      color: #ffd700;
+      margin-bottom: 1rem;
+    }
+    .card p {
+      color: #ccc;
+    }
+    .price {
+      color: #27ae60;
+      font-weight: bold;
+      margin: 1rem 0;
+    }
+    .contact-icons {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+      margin-top: 2rem;
+    }
+    .contact-icons a {
+      color: #ffd700;
+      font-size: 2rem;
+      transition: 0.3s;
+    }
+    .contact-icons a:hover {
+      color: #fff;
+    }
+    footer {
+      text-align: center;
+      padding: 2rem 1rem;
+      background: #111;
+      font-size: 0.9rem;
+      color: #aaa;
+    }
+    @media (max-width: 600px) {
+      .hero h1 {
+        font-size: 2rem;
+      }
+      .hero p {
+        font-size: 1rem;
+      }
+    }
   </style>
 </head>
-<body>  <!-- Hero Section -->  <header>
+<body>
+  <header>
     <div class="hero">
       <h1>BlessedFXXperts</h1>
       <p>Leading You to Forex Freedom</p>
       <a href="#courses" class="btn">Get Started</a>
     </div>
-  </header>  <!-- About Section -->  <section>
-    <h2 class="section-title">Why BlessedFXXperts?</h2>
-    <p style="text-align: center; max-width: 700px; margin: auto; color: #ccc;">
-      We specialize in smart money trading, mentorship, and practical forex education that turns struggling traders into consistent profit-makers. We don’t teach hype — only results.
-    </p>
-  </section>  <!-- Courses Section -->  <section id="courses">
+  </header>  <section id="courses">
     <h2 class="section-title">Our Programs</h2>
     <div class="grid">
       <div class="card">
-        <h3>Starter Course</h3>
+        <h3>Basics</h3>
         <p>Get the foundation you need to understand forex markets.</p>
-        <p class="price">$20</p>
+        <p class="price">$65</p>
         <a href="#" class="btn">Enroll</a>
       </div>
       <div class="card">
-        <h3>Smart Money Mastery</h3>
-        <p>Learn the same strategy used by institutions and banks.</p>
-        <p class="price">$55</p>
-        <a href="#" class="btn">Start Now</a>
-      </div>
-      <div class="card">
-        <h3>Mentorship Program</h3>
+        <h3>Full Mentorship</h3>
         <p>Private coaching and accountability with real results.</p>
-        <p class="price">$100</p>
+        <p class="price">$150</p>
         <a href="#" class="btn">Apply</a>
       </div>
     </div>
-  </section>  <!-- Performance -->  <section>
-    <h2 class="section-title">Performance Stats</h2>
+  </section>  <section id="services">
+    <h2 class="section-title">Services</h2>
     <div class="grid">
       <div class="card">
-        <h3>Total Earnings</h3>
-        <p class="price">$17,300+</p>
+        <h3>VIP Program</h3>
+        <p>Monthly subscription for premium trading signals and coaching.</p>
+        <p class="price">$45 / month</p>
       </div>
       <div class="card">
-        <h3>Monthly Growth</h3>
-        <p class="price">+32.5%</p>
+        <h3>20 Week Program</h3>
+        <p>Focused training program to build advanced skills.</p>
+        <p class="price">$20 / week</p>
       </div>
       <div class="card">
-        <h3>Win Rate</h3>
-        <p class="price">89%</p>
+        <h3>Lifetime Access</h3>
+        <p>One-time payment for full, unlimited access.</p>
+        <p class="price">$1,000 lifetime</p>
       </div>
     </div>
-  </section>  <!-- Contact Section -->  <section>
+  </section>  <section id="contact">
     <h2 class="section-title">Contact Us</h2>
     <div class="contact-icons">
-      <a href="https://wa.me/263789385081" target="_blank" title="WhatsApp">
-        <i class="fab fa-whatsapp"></i>
-      </a>
-      <a href="mailto:Bdpvtltd1@gmail.com" title="Email">
-        <i class="fas fa-envelope"></i>
-      </a>
-      <a href="https://youtube.com/@blessingfxguru?si=jrrsc4mTZpiOwGQx" target="_blank" title="YouTube">
-        <i class="fab fa-youtube"></i>
-      </a>
-      <a href="https://www.facebook.com/share/16kgW17azL/?mibextid=wwXIfr" target="_blank" title="Facebook">
-        <i class="fab fa-facebook"></i>
-      </a>
-      <a href="https://www.instagram.com/blessing_forex_xperts/profilecard/?igsh=MWtid2M5dXhkZW8zdg==" target="_blank" title="Instagram">
-        <i class="fab fa-instagram"></i>
-      </a>
+      <a href="https://wa.me/263789385081" target="_blank"><i class="fab fa-whatsapp"></i></a>
+      <a href="mailto:Bdpvtltd1@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+      <a href="https://youtube.com/@blessingfxguru?si=jrrsc4mTZpiOwGQx" target="_blank"><i class="fab fa-youtube"></i></a>
+      <a href="https://www.facebook.com/share/16kgW17azL/?mibextid=wwXIfr" target="_blank"><i class="fab fa-facebook"></i></a>
+      <a href="https://www.instagram.com/blessing_forex_xperts/profilecard/?igsh=MWtid2M5dXhkZW8zdg==" target="_blank"><i class="fab fa-instagram"></i></a>
     </div>
-  </section>  <!-- Footer -->  <footer>
-    &copy; 2025 BlessedFXXperts. All rights reserved.
-  </footer></body>
+  </section>  <footer>
+    <p>&copy; 2025 BlessedFXXperts. All rights reserved.</p>
+  </footer>
+</body>
 </html>
