@@ -1,62 +1,73 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>BlessedFXXperts</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="style.css" />
+  <script defer>
+    function togglePopup() {
+      document.getElementById('popup').style.display = 'flex';
+    }
+    function closePopup() {
+      document.getElementById('popup').style.display = 'none';
+    }
+  </script>
 </head>
 <body>
 
-  <header class="hero">
-    <h1>BlessedFXXperts</h1>
-    <p>Master Forex. Master Your Life.</p>
-    <button onclick="openPopup()">Join Now</button>
+  <header>
+    <video autoplay loop muted>
+      <source src="https://assets.mixkit.co/videos/preview/mixkit-stock-market-graph-on-a-screen-4901-large.mp4" type="video/mp4">
+    </video>
+    <div class="overlay"></div>
+    <div class="hero">
+      <h1 class="glow">BlessedFXXperts</h1>
+      <p>Master Forex. Master Your Life.</p>
+      <button class="btn" onclick="togglePopup()">Join Now</button>
+    </div>
   </header>
 
-  <main>
-    <section class="card">
-      <h2>Courses</h2>
-
-      <div>
+  <section>
+    <h2 class="section-title">Courses</h2>
+    <div class="grid">
+      <div class="card">
         <h3>Basics</h3>
         <p>Understand the foundation of Forex markets, pips, charts, indicators & psychology.</p>
         <p class="price">$65</p>
       </div>
-
-      <div>
+      <div class="card">
         <h3>Full Mentorship</h3>
         <p>Advanced price action, strategies, risk management, signals & funded account prep.</p>
         <p class="price">$150</p>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <section class="card">
-      <h2>VIP Services</h2>
-      <h3>VIP Access</h3>
-      <p>Daily signals, private mentorship, live trading rooms, capital scaling & exclusive groups.</p>
-      <ul>
-        <li>Weekly: $20</li>
-        <li>Monthly: $45</li>
-        <li>Lifetime: $1,000</li>
-      </ul>
-    </section>
-
-    <section class="card">
-      <h2>Contact Us</h2>
-      <div class="contact-icons">
-        <a href="#"><span>💬</span></a>
-        <a href="#"><span>✉️</span></a>
-        <a href="#"><span>📹</span></a>
-        <a href="#"><span>📘</span></a>
-        <a href="#"><span>📸</span></a>
+  <section>
+    <h2 class="section-title">VIP Services</h2>
+    <div class="grid">
+      <div class="card">
+        <h3>VIP Access</h3>
+        <p>Daily signals, mentorship, live trading rooms, capital scaling & exclusive groups.</p>
+        <ul>
+          <li>Weekly: $20</li>
+          <li>Monthly: $45</li>
+          <li>Lifetime: $1,000</li>
+        </ul>
       </div>
-    </section>
+    </div>
+  </section>
 
-    <footer>
-      <p>© 2025 BlessedFXXperts. All rights reserved.</p>
-    </footer>
-  </main>
+  <section>
+    <h2 class="section-title">Contact Us</h2>
+    <div class="contact-icons">
+      <a href="https://wa.me/263789385081" target="_blank">📱</a>
+      <a href="mailto:bdpvtltd1@gmail.com">📧</a>
+      <a href="https://youtube.com/@blessingfxguru?si=jrrsc4mTZpiOwGQx" target="_blank">▶️</a>
+    </div>
+    <p style="text-align: center;">© 2025 BlessedFXXperts. All rights reserved.</p>
+  </section>
 
   <!-- Payment Popup -->
   <div class="popup" id="popup">
@@ -69,16 +80,6 @@
       <button class="close-btn" onclick="closePopup()">Close</button>
     </div>
   </div>
-
-  <script>
-    function openPopup() {
-      document.getElementById("popup").style.display = "flex";
-    }
-
-    function closePopup() {
-      document.getElementById("popup").style.display = "none";
-    }
-  </script>
 
 </body>
 </html>
