@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
   <title>BlessedFXXperts</title>
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <style>
     * {
       margin: 0; padding: 0; box-sizing: border-box;
@@ -64,6 +64,7 @@
       transition: 0.3s;
       cursor: pointer;
       box-shadow: 0 0 15px #ffd700aa;
+      border: none;
     }
 
     .btn:hover {
@@ -128,6 +129,7 @@
       color: #ffd700;
       font-size: 2rem;
       transition: 0.3s;
+      cursor: pointer;
     }
 
     .contact-icons a:hover {
@@ -152,6 +154,13 @@
       z-index: 999;
       justify-content: center;
       align-items: center;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .popup.show {
+      display: flex;
+      opacity: 1;
     }
 
     .popup-content {
@@ -191,8 +200,15 @@
     }
 
     @media (max-width: 600px) {
-      .hero h1 { font-size: 2rem; }
-      .hero p { font-size: 1rem; }
+      .hero h1 { 
+        font-size: 2.4rem; 
+      }
+      .hero p { 
+        font-size: 1.1rem; 
+      }
+      .hero {
+        padding: 3rem 1rem;
+      }
     }
   </style>
 </head>
@@ -202,7 +218,7 @@
     <div class="hero">
       <h1>BlessedFXXperts</h1>
       <p>Master Forex. Master Your Life.</p>
-      <button class="btn" onclick="document.getElementById('popup').style.display='flex'">Enroll Now</button>
+      <button class="btn" onclick="openPopup()">Enroll Now</button>
     </div>
   </header>
 
@@ -246,11 +262,11 @@
   <section>
     <h2 class="section-title">Connect With Us</h2>
     <div class="contact-icons">
-      <a href="https://wa.me/263789385081" target="_blank">📱</a>
-      <a href="mailto:Bdpvtltd1@gmail.com">📧</a>
-      <a href="https://youtube.com/@blessingfxguru?si=jrrsc4mTZpiOwGQx" target="_blank">📺</a>
-      <a href="https://www.facebook.com/share/16kgW17azL/?mibextid=wwXIfr" target="_blank">📘</a>
-      <a href="https://www.instagram.com/blessing_forex_xperts/profilecard/?igsh=MWtid2M5dXhkZW8zdg==" target="_blank">📸</a>
+      <a href="https://wa.me/263789385081" target="_blank" aria-label="WhatsApp Contact" title="WhatsApp">📱</a>
+      <a href="mailto:Bdpvtltd1@gmail.com" aria-label="Send Email" title="Email">📧</a>
+      <a href="https://youtube.com/@blessingfxguru?si=jrrsc4mTZpiOwGQx" target="_blank" aria-label="YouTube Channel" title="YouTube">📺</a>
+      <a href="https://www.facebook.com/share/16kgW17azL/?mibextid=wwXIfr" target="_blank" aria-label="Facebook" title="Facebook">📘</a>
+      <a href="https://www.instagram.com/blessing_forex_xperts/profilecard/?igsh=MWtid2M5dXhkZW8zdg==" target="_blank" aria-label="Instagram" title="Instagram">📸</a>
     </div>
   </section>
 
@@ -265,9 +281,17 @@
       <p><strong>Bank:</strong> CABS</p>
       <p><strong>Acc Name:</strong> BLESSING GURU</p>
       <p><strong>Acc No:</strong> 1234567890</p>
-      <button class="close-btn" onclick="document.getElementById('popup').style.display='none'">Close</button>
+      <button class="close-btn" onclick="closePopup()">Close</button>
     </div>
   </div>
 
+  <script>
+    function openPopup() {
+      document.getElementById('popup').classList.add('show');
+    }
+    function closePopup() {
+      document.getElementById('popup').classList.remove('show');
+    }
+  </script>
 </body>
 </html>
