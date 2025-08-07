@@ -1,4 +1,3 @@
-/* Reset */
 * {
   margin: 0;
   padding: 0;
@@ -9,146 +8,190 @@ body {
   font-family: 'Montserrat', sans-serif;
   background-color: #000;
   color: #fff;
-  overflow-x: hidden;
-  padding: 2rem;
 }
 
-/* Hero title */
-h1 {
-  font-size: 3rem;
+header {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+header video {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  z-index: 0;
+}
+
+.overlay {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.6);
+  z-index: 1;
+}
+
+.hero {
+  position: relative;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero h1 {
+  font-size: 3.5rem;
   color: #ffd700;
-  text-shadow: 0 0 10px #ffd700aa, 0 0 20px #ffd70088;
-  animation: glow 2s ease-in-out infinite alternate;
+  text-shadow: 0 0 20px #ffd700aa;
 }
 
-/* Subtitle */
+.glow {
+  animation: glowEffect 2s infinite alternate;
+}
+
+@keyframes glowEffect {
+  0% {
+    text-shadow: 0 0 10px #ffd700, 0 0 20px #ffd700;
+  }
+  100% {
+    text-shadow: 0 0 20px #fff000, 0 0 40px #ffd700;
+  }
+}
+
 .hero p {
   font-size: 1.2rem;
-  margin: 1rem 0;
-  color: #ccc;
+  margin: 1rem 0 1.5rem;
 }
 
-/* Section titles */
-h2, h3 {
-  color: #ffd700;
-  margin-top: 2rem;
-  text-shadow: 0 0 5px #ffd70066;
-  animation: glow 2s ease-in-out infinite alternate;
-}
-
-/* Glow animation */
-@keyframes glow {
-  from {
-    text-shadow: 0 0 5px #ffd70055;
-  }
-  to {
-    text-shadow: 0 0 15px #ffd700cc;
-  }
-}
-
-/* Buttons */
-button, .btn {
+.btn {
   background-color: #ffd700;
   color: #000;
-  padding: 0.7rem 1.4rem;
+  padding: 0.7rem 1.5rem;
   border-radius: 30px;
+  text-decoration: none;
   font-weight: bold;
   border: none;
   cursor: pointer;
-  margin: 1rem 0;
-  box-shadow: 0 0 10px #ffd700aa;
-  transition: all 0.3s ease;
+  transition: 0.3s;
 }
 
-button:hover, .btn:hover {
-  box-shadow: 0 0 20px #ffd700cc, 0 0 30px #ffd700aa;
+.btn:hover {
+  background-color: #e5c100;
   transform: scale(1.05);
 }
 
-/* Card-style section */
+section {
+  padding: 3rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+}
+
+.section-title {
+  font-size: 2rem;
+  color: #ffd700;
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
 .card {
   background: #111;
   padding: 2rem;
-  border-radius: 10px;
-  margin-bottom: 2rem;
-  box-shadow: 0 0 10px rgba(255, 215, 0, 0.2);
+  border-radius: 12px;
+  transition: 0.3s;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.1);
 }
 
-/* Prices */
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.4);
+}
+
+.card h3 {
+  color: #ffd700;
+  margin-bottom: 0.8rem;
+}
+
+.card p, li {
+  color: #ccc;
+}
+
 .price {
-  color: #00ff88;
+  color: #27ae60;
   font-weight: bold;
   margin-top: 1rem;
 }
 
-/* Contact Icons */
+.contact-icons {
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  font-size: 2rem;
+  margin-top: 1rem;
+}
+
 .contact-icons a {
-  font-size: 1.8rem;
-  margin: 0 0.5rem;
   color: #ffd700;
-  text-shadow: 0 0 5px #ffd70088;
   transition: 0.3s;
 }
 
 .contact-icons a:hover {
   color: #fff;
-  text-shadow: 0 0 10px #ffd700dd, 0 0 15px #ffd70099;
 }
 
-/* Footer */
 footer {
   text-align: center;
-  margin-top: 3rem;
-  font-size: 0.9rem;
+  padding: 2rem 1rem;
+  background: #111;
   color: #aaa;
 }
 
-/* Popup Styling */
+/* Popup */
 .popup {
   display: none;
   position: fixed;
-  top: 0;
-  left: 0;
+  top: 0; left: 0;
   width: 100%;
   height: 100%;
-  background: rgba(0,0,0,0.8);
+  background: rgba(0,0,0,0.85);
+  z-index: 1000;
   justify-content: center;
   align-items: center;
-  z-index: 999;
 }
 
 .popup-content {
   background: #111;
-  color: #fff;
   padding: 2rem;
-  border-radius: 15px;
-  box-shadow: 0 0 20px #ffd70044;
+  border-radius: 12px;
+  color: #fff;
   max-width: 90%;
+  box-shadow: 0 0 25px rgba(255, 215, 0, 0.4);
   text-align: center;
 }
 
-.popup-content h3 {
-  color: #ffd700;
-  margin-bottom: 1rem;
-}
-
-.popup-content p {
-  margin: 0.3rem 0;
-}
-
 .close-btn {
+  margin-top: 1rem;
   background: #ffd700;
   color: #000;
-  padding: 0.5rem 1.2rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
   border: none;
-  border-radius: 25px;
-  margin-top: 1rem;
   font-weight: bold;
   cursor: pointer;
 }
 
 @media (max-width: 600px) {
-  h1 {
-    font-size: 2rem;
-  }
+  .hero h1 { font-size: 2rem; }
+  .hero p { font-size: 1rem; }
 }
