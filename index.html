@@ -5,32 +5,34 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Equity Syndicate - Forex Mentorship</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
     <style>
         :root {
-            --primary: #0d47a1;
-            --secondary: #ff9800;
-            --dark: #0c1b33;
-            --light: #f5f9ff;
-            --gray: #e0e7f0;
-            --success: #4caf50;
-            --text: #333;
-            --text-light: #666;
+            --primary: #00f3ff; /* Electric Cyan */
+            --secondary: #ff2a6d; /* Neon Pink */
+            --dark: #0a0a1a; /* Deep Space Blue */
+            --darker: #060814;
+            --light: #1e2337;
+            --gray: #2a3045;
+            --success: #00ff88;
+            --text: #e0e0ff;
+            --text-light: #90a0c0;
+            --card-bg: #14182e;
+            --border: #2a3045;
         }
-
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
             font-family: 'Poppins', sans-serif;
+            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
         }
-
         body {
-            background-color: var(--light);
+            background-color: var(--darker);
             color: var(--text);
             line-height: 1.6;
+            overflow-x: hidden;
         }
-
         .container {
             width: 100%;
             max-width: 1200px;
@@ -40,283 +42,340 @@
 
         /* Header Styles */
         header {
-            background: linear-gradient(to right, var(--dark), var(--primary));
+            background: linear-gradient(to right, var(--dark), var(--darker));
             color: white;
             padding: 15px 0;
             position: sticky;
             top: 0;
             z-index: 1000;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-bottom: 1px solid var(--border);
+            backdrop-filter: blur(10px);
         }
-
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
         }
-
         .logo {
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
             font-size: 1.8rem;
             font-weight: 700;
+            font-family: 'Orbitron', sans-serif;
+            color: white;
         }
-
         .logo i {
-            color: var(--secondary);
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
         }
-
         nav ul {
             display: flex;
             list-style: none;
             gap: 30px;
         }
-
         nav a {
-            color: white;
+            color: var(--text-light);
             text-decoration: none;
             font-weight: 500;
             transition: all 0.3s ease;
             position: relative;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 0.5px;
         }
-
         nav a:hover {
-            color: var(--secondary);
+            color: var(--primary);
         }
-
-        nav a:after {
+        nav a::before {
             content: '';
             position: absolute;
             width: 0;
             height: 2px;
-            background: var(--secondary);
+            background: linear-gradient(to right, var(--primary), var(--secondary));
             bottom: -5px;
             left: 0;
-            transition: width 0.3s ease;
+            transition: width 0.4s ease;
         }
-
-        nav a:hover:after {
+        nav a:hover::before {
             width: 100%;
         }
 
         /* Hero Section */
         .hero {
-            background: linear-gradient(rgba(12, 27, 51, 0.9), rgba(12, 27, 51, 0.9)), url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
+            background: 
+                radial-gradient(circle at 50% 50%, rgba(0, 243, 255, 0.1) 0%, transparent 50%),
+                url('https://images.unsplash.com/photo-1611974789855-9c2a0a7236a3?ixlib=rb-4.0.3&auto=format&fit=crop&w=1920&q=80') no-repeat center center/cover;
             color: white;
-            padding: 100px 0;
+            padding: 120px 0;
             text-align: center;
+            position: relative;
         }
-
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: rgba(10, 10, 26, 0.85);
+        }
         .hero-content {
             max-width: 800px;
             margin: 0 auto;
+            position: relative;
+            z-index: 2;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.3s;
         }
-
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
         .hero h1 {
-            font-size: 3.5rem;
+            font-size: 3.8rem;
             margin-bottom: 20px;
             line-height: 1.2;
+            font-family: 'Orbitron', sans-serif;
+            text-shadow: 0 0 15px rgba(0, 243, 255, 0.3);
         }
-
         .hero p {
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             margin-bottom: 40px;
             opacity: 0.9;
         }
-
         .btn-group {
             display: flex;
             justify-content: center;
             gap: 20px;
             margin-top: 30px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.6s;
         }
-
         .btn {
-            padding: 12px 30px;
-            border-radius: 30px;
+            padding: 14px 35px;
+            border-radius: 50px;
             font-weight: 600;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.4s ease;
             border: none;
-            font-size: 1rem;
+            font-size: 1.1rem;
             text-decoration: none;
             display: inline-block;
+            font-family: 'Orbitron', sans-serif;
+            letter-spacing: 1px;
+            box-shadow: 0 5px 15px rgba(0, 243, 255, 0.2);
         }
-
         .btn-primary {
-            background: var(--secondary);
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
             color: white;
         }
-
         .btn-primary:hover {
-            background: #e68a00;
-            transform: translateY(-3px);
-            box-shadow: 0 5px 15px rgba(255, 152, 0, 0.4);
+            transform: translateY(-4px);
+            box-shadow: 0 8px 25px rgba(0, 243, 255, 0.4);
+            background: linear-gradient(45deg, #00ffcc, #ff3385);
         }
-
         .btn-outline {
             background: transparent;
-            border: 2px solid white;
-            color: white;
-        }
-
-        .btn-outline:hover {
-            background: white;
+            border: 2px solid var(--primary);
             color: var(--primary);
-            transform: translateY(-3px);
+        }
+        .btn-outline:hover {
+            background: rgba(0, 243, 255, 0.1);
+            box-shadow: 0 5px 20px rgba(0, 243, 255, 0.3);
         }
 
         /* Performance Section */
         .performance {
-            background: white;
-            padding: 70px 0;
+            padding: 80px 0;
             text-align: center;
+            background: var(--light);
+            background: linear-gradient(135deg, var(--light) 0%, var(--dark) 100%);
         }
-
         .section-title {
-            font-size: 2.5rem;
-            margin-bottom: 50px;
+            font-size: 2.8rem;
+            margin-bottom: 60px;
             color: var(--primary);
             position: relative;
             display: inline-block;
+            font-family: 'Orbitron', sans-serif;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.2s;
         }
-
-        .section-title:after {
+        .section-title::after {
             content: '';
             position: absolute;
-            width: 80px;
+            width: 100px;
             height: 4px;
-            background: var(--secondary);
-            bottom: -10px;
+            background: linear-gradient(to right, var(--primary), var(--secondary));
+            bottom: -15px;
             left: 50%;
             transform: translateX(-50%);
+            border-radius: 2px;
         }
-
         .stats {
-            background: linear-gradient(to right, var(--primary), var(--dark));
+            background: linear-gradient(145deg, #12162b, #0e1124);
             color: white;
-            border-radius: 15px;
-            padding: 40px;
-            max-width: 600px;
-            margin: 0 auto 60px;
-            box-shadow: 0 10px 30px rgba(13, 71, 161, 0.2);
+            border-radius: 20px;
+            padding: 50px;
+            max-width: 650px;
+            margin: 0 auto 70px;
+            border: 1px solid var(--border);
+            box-shadow: 0 10px 30px rgba(0, 243, 255, 0.1);
+            opacity: 0;
+            transform: scale(0.95);
+            animation: fadeIn 0.8s ease forwards 0.4s;
         }
-
+        @keyframes fadeIn {
+            to {
+                opacity: 1;
+                transform: scale(1);
+            }
+        }
         .stats h3 {
-            font-size: 1.5rem;
+            font-size: 1.7rem;
             margin-bottom: 20px;
+            color: var(--text-light);
         }
-
         .stats-value {
-            font-size: 3rem;
+            font-size: 3.5rem;
             font-weight: 700;
             margin-bottom: 10px;
-            color: var(--secondary);
+            color: var(--primary);
+            text-shadow: 0 0 10px rgba(0, 243, 255, 0.3);
+            font-family: 'Orbitron', sans-serif;
         }
-
         .stats-desc {
-            font-size: 1.1rem;
-            opacity: 0.9;
+            font-size: 1.2rem;
+            opacity: 0.8;
         }
 
         /* Courses Section */
         .courses {
-            padding: 70px 0;
-            background: var(--gray);
+            padding: 80px 0;
+            background: var(--darker);
+            position: relative;
         }
-
+        .courses::before {
+            content: '';
+            position: absolute;
+            top: 0; left: 0;
+            width: 100%; height: 100%;
+            background: url('image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="100" height="100" viewBox="0 0 100 100"><rect fill="rgba(255,42,109,0.02)" width="100" height="100"/></svg>');
+            opacity: 0.1;
+        }
         .section-header {
             text-align: center;
             max-width: 700px;
-            margin: 0 auto 50px;
+            margin: 0 auto 60px;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.2s;
         }
-
         .section-header p {
             color: var(--text-light);
-            font-size: 1.1rem;
+            font-size: 1.2rem;
         }
-
         .course-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 30px;
         }
-
         .course-card {
-            background: white;
-            border-radius: 15px;
+            background: var(--card-bg);
+            border-radius: 20px;
             overflow: hidden;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+            transition: all 0.4s ease;
+            border: 1px solid var(--border);
+            backdrop-filter: blur(10px);
+            opacity: 0;
+            transform: translateY(30px);
         }
-
+        .course-card:nth-child(1) { animation: cardAppear 0.6s ease forwards 0.3s; }
+        .course-card:nth-child(2) { animation: cardAppear 0.6s ease forwards 0.4s; }
+        .course-card:nth-child(3) { animation: cardAppear 0.6s ease forwards 0.5s; }
+        .course-card:nth-child(4) { animation: cardAppear 0.6s ease forwards 0.6s; }
+        @keyframes cardAppear {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
         .course-card:hover {
-            transform: translateY(-10px);
-            box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+            transform: translateY(-12px);
+            box-shadow: 0 20px 40px rgba(0, 243, 255, 0.15);
+            border-color: var(--primary);
         }
-
         .course-header {
-            padding: 25px;
-            background: linear-gradient(to right, var(--primary), var(--dark));
+            padding: 30px;
+            background: linear-gradient(145deg, var(--primary), #00aaff);
             color: white;
             position: relative;
+            text-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
         }
-
         .popular-badge {
             position: absolute;
             top: 15px;
             right: 15px;
             background: var(--secondary);
             color: white;
-            padding: 5px 15px;
-            border-radius: 20px;
+            padding: 8px 20px;
+            border-radius: 30px;
             font-size: 0.9rem;
             font-weight: 600;
+            font-family: 'Orbitron', sans-serif;
+            box-shadow: 0 0 15px rgba(255, 42, 109, 0.5);
+            animation: pulse 2s ease-in-out infinite;
         }
-
+        @keyframes pulse {
+            0%, 100% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+        }
         .course-title {
-            font-size: 1.5rem;
-            margin-bottom: 10px;
+            font-size: 1.6rem;
+            margin-bottom: 12px;
+            font-family: 'Orbitron', sans-serif;
         }
-
         .course-price {
-            font-size: 2.5rem;
+            font-size: 2.8rem;
             font-weight: 700;
-            margin-bottom: 5px;
+            margin-bottom: 8px;
+            color: white;
+            font-family: 'Orbitron', sans-serif;
         }
-
         .course-price span {
-            font-size: 1rem;
-            font-weight: 400;
-            opacity: 0.8;
+            font-size: 1.1rem;
+            opacity: 0.9;
         }
-
         .course-body {
-            padding: 25px;
+            padding: 30px;
         }
-
         .course-features {
             list-style: none;
-            margin: 20px 0;
+            margin: 25px 0;
         }
-
         .course-features li {
-            padding: 8px 0;
-            border-bottom: 1px solid var(--gray);
+            padding: 10px 0;
+            border-bottom: 1px solid var(--border);
             display: flex;
             align-items: center;
-            gap: 10px;
+            gap: 12px;
+            transition: color 0.3s ease;
         }
-
+        .course-features li:hover {
+            color: var(--primary);
+        }
         .course-features li i {
             color: var(--success);
+            font-size: 1.1em;
         }
 
         .course-footer {
-            padding: 0 25px 25px;
+            padding: 0 30px 30px;
         }
-
         .btn-block {
             display: block;
             width: 100%;
@@ -325,80 +384,88 @@
 
         /* Call to Action */
         .cta {
-            background: linear-gradient(to right, var(--primary), var(--dark));
+            background: linear-gradient(135deg, var(--dark), var(--darker));
             color: white;
-            padding: 100px 0;
+            padding: 120px 0;
             text-align: center;
+            border-top: 1px solid var(--border);
         }
-
         .cta h2 {
-            font-size: 2.8rem;
+            font-size: 3rem;
             margin-bottom: 20px;
+            font-family: 'Orbitron', sans-serif;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.3s;
         }
-
         .cta p {
             max-width: 700px;
             margin: 0 auto 40px;
-            font-size: 1.2rem;
+            font-size: 1.3rem;
             opacity: 0.9;
+            opacity: 0;
+            transform: translateY(20px);
+            animation: fadeInUp 0.8s ease forwards 0.4s;
         }
 
         /* Footer */
         footer {
-            background: var(--dark);
-            color: white;
-            padding: 70px 0 30px;
+            background: var(--darker);
+            color: var(--text-light);
+            padding: 80px 0 30px;
+            border-top: 1px solid var(--border);
         }
-
         .footer-content {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 40px;
-            margin-bottom: 50px;
+            gap: 50px;
+            margin-bottom: 60px;
         }
-
         .footer-column h3 {
-            font-size: 1.5rem;
-            margin-bottom: 20px;
+            font-size: 1.6rem;
+            margin-bottom: 25px;
             position: relative;
-            padding-bottom: 10px;
+            padding-bottom: 12px;
+            color: var(--primary);
+            font-family: 'Orbitron', sans-serif;
         }
-
-        .footer-column h3:after {
+        .footer-column h3::after {
             content: '';
             position: absolute;
-            width: 50px;
+            width: 60px;
             height: 3px;
-            background: var(--secondary);
+            background: var(--primary);
             bottom: 0;
             left: 0;
         }
-
         .footer-links {
             list-style: none;
         }
-
         .footer-links li {
-            margin-bottom: 12px;
+            margin-bottom: 15px;
         }
-
         .footer-links a {
-            color: #a0b3d6;
+            color: var(--text-light);
             text-decoration: none;
             transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 10px;
         }
-
         .footer-links a:hover {
-            color: var(--secondary);
-            padding-left: 5px;
+            color: var(--primary);
+            transform: translateX(5px);
+        }
+        .footer-links a i {
+            font-size: 1.1em;
         }
 
         .copyright {
             text-align: center;
             padding-top: 30px;
-            border-top: 1px solid rgba(255,255,255,0.1);
-            color: #a0b3d6;
-            font-size: 0.9rem;
+            border-top: 1px solid var(--border);
+            color: #7780a0;
+            font-size: 0.95rem;
         }
 
         /* Payment Modal */
@@ -409,176 +476,251 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.8);
+            background: rgba(6, 8, 20, 0.95);
+            backdrop-filter: blur(10px);
             z-index: 2000;
             overflow-y: auto;
         }
-
         .modal-content {
-            background: white;
+            background: var(--card-bg);
             width: 100%;
             max-width: 600px;
-            margin: 50px auto;
-            border-radius: 15px;
+            margin: 60px auto;
+            border-radius: 20px;
             overflow: hidden;
-            animation: modalOpen 0.4s ease;
+            border: 1px solid var(--border);
+            box-shadow: 0 20px 50px rgba(0, 243, 255, 0.1);
+            animation: modalOpen 0.5s ease;
         }
-
         @keyframes modalOpen {
             from {
                 opacity: 0;
-                transform: translateY(-50px);
+                transform: translateY(-60px) scale(0.95);
             }
             to {
                 opacity: 1;
-                transform: translateY(0);
+                transform: translateY(0) scale(1);
             }
         }
-
         .modal-header {
-            background: var(--primary);
+            background: linear-gradient(to right, var(--primary), var(--secondary));
             color: white;
-            padding: 20px;
+            padding: 25px;
             text-align: center;
+            border-bottom: 1px solid var(--border);
         }
-
         .modal-header h2 {
-            font-size: 1.8rem;
+            font-size: 1.9rem;
+            font-family: 'Orbitron', sans-serif;
         }
-
         .modal-body {
-            padding: 30px;
+            padding: 35px;
         }
-
         .payment-methods {
             margin-bottom: 30px;
         }
-
         .payment-method {
-            background: var(--light);
-            border-radius: 10px;
-            padding: 20px;
+            background: rgba(0, 243, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
             margin-bottom: 20px;
             border-left: 4px solid var(--primary);
+            border: 1px solid var(--border);
         }
-
         .payment-method h3 {
             margin-bottom: 15px;
             color: var(--primary);
+            font-family: 'Orbitron', sans-serif;
         }
-
         .payment-details {
-            background: var(--light);
-            border-radius: 10px;
-            padding: 20px;
-            margin-bottom: 20px;
+            background: rgba(0, 243, 255, 0.05);
+            border-radius: 15px;
+            padding: 25px;
+            margin-bottom: 25px;
+            border: 1px solid var(--border);
         }
-
         .payment-details h3 {
             margin-bottom: 15px;
             color: var(--primary);
+            font-family: 'Orbitron', sans-serif;
         }
-
         .account-holder {
-            background: #e8f4ff;
-            padding: 15px;
-            border-radius: 8px;
+            background: rgba(0, 243, 255, 0.1);
+            padding: 18px;
+            border-radius: 10px;
             margin: 15px 0;
             font-weight: 600;
+            color: white;
+            border-left: 3px solid var(--primary);
         }
-
         .instructions {
             margin-top: 30px;
         }
-
         .instructions li {
-            margin-bottom: 10px;
-            padding-left: 20px;
+            margin-bottom: 12px;
+            padding-left: 25px;
             position: relative;
+            transition: color 0.3s ease;
         }
-
-        .instructions li:before {
-            content: '•';
+        .instructions li:hover {
+            color: var(--primary);
+        }
+        .instructions li::before {
+            content: '▶';
             position: absolute;
             left: 0;
             color: var(--primary);
+            font-size: 0.8em;
         }
-
         .modal-footer {
-            padding: 20px;
+            padding: 25px;
             text-align: center;
-            border-top: 1px solid var(--gray);
+            border-top: 1px solid var(--border);
         }
-
         .btn-back {
-            background: #6c757d;
+            background: #3a3a5c;
             color: white;
         }
-
         .btn-back:hover {
-            background: #5a6268;
+            background: #4a4a7a;
         }
-
         .whatsapp-btn {
-            background: #25D366;
-            color: white;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 10px;
+            background: #00ff88;
+            color: #060814;
         }
-
         .whatsapp-btn:hover {
-            background: #128C7E;
+            background: #00cc66;
+            transform: translateY(-2px);
         }
-
         .whatsapp-section {
             display: flex;
             flex-direction: column;
-            gap: 10px;
+            gap: 12px;
         }
-        
+
         /* Responsive */
         @media (max-width: 768px) {
             .header-content {
                 flex-direction: column;
                 gap: 20px;
             }
-
             nav ul {
                 flex-wrap: wrap;
                 justify-content: center;
             }
-
             .hero h1 {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
-
             .btn-group {
                 flex-direction: column;
                 align-items: center;
             }
-
             .stats-value {
-                font-size: 2.5rem;
+                font-size: 2.8rem;
             }
-
             .section-title {
-                font-size: 2rem;
+                font-size: 2.3rem;
             }
-
             .cta h2 {
-                font-size: 2.2rem;
+                font-size: 2.4rem;
+            }
+        }
+
+        /* ===== FUTURISTIC INTRO ANIMATION ===== */
+        .intro-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--darker);
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+            overflow: hidden;
+        }
+        #candlestickCanvas {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            z-index: 1;
+        }
+        .brand-reveal {
+            position: relative;
+            z-index: 10;
+            text-align: center;
+            padding: 30px;
+        }
+        .brand-name {
+            font-size: clamp(4rem, 12vw, 8rem);
+            font-weight: 700;
+            margin-bottom: 2rem;
+            text-transform: uppercase;
+            letter-spacing: -0.05em;
+            color: transparent;
+            background: linear-gradient(90deg, var(--primary), var(--secondary), var(--primary));
+            background-size: 300% auto;
+            -webkit-background-clip: text;
+            background-clip: text;
+            animation: shine 4s linear infinite, pulse 2s ease-in-out infinite;
+            font-family: 'Orbitron', sans-serif;
+        }
+        @keyframes shine {
+            to { background-position: 300% center; }
+        }
+        @keyframes pulse {
+            0%, 100% { filter: brightness(1); }
+            50% { filter: brightness(1.3); }
+        }
+        .loading-bar {
+            width: 80%;
+            max-width: 400px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 2px;
+            overflow: hidden;
+            position: relative;
+            border: 1px solid rgba(0, 243, 255, 0.3);
+        }
+        .loading-progress {
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            transition: width 3.5s cubic-bezier(0.65, 0, 0.35, 1);
+            box-shadow: 0 0 10px rgba(0, 243, 255, 0.5);
+        }
+        .fade-out {
+            animation: fadeOut 1s ease-out forwards;
+        }
+        @keyframes fadeOut {
+            to {
+                opacity: 0;
+                transform: scale(0.9);
             }
         }
     </style>
 </head>
 <body>
+    <!-- FUTURISTIC TRADERX INTRO -->
+    <div class="intro-overlay" id="introOverlay">
+        <canvas id="candlestickCanvas"></canvas>
+        <div class="brand-reveal">
+            <div class="brand-name">EQUITY SYNDICATE</div>
+            <div class="loading-bar">
+                <div class="loading-progress" id="loadingProgress"></div>
+            </div>
+        </div>
+    </div>
+
     <header>
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <i class="fas fa-crown"></i>
+                    <i class="fas fa-cube"></i>
                     <span>Equity Syndicate</span>
                 </div>
                 <nav>
@@ -747,10 +889,10 @@
                 <div class="footer-column">
                     <h3>Contact Us</h3>
                     <ul class="footer-links">
-                        <li><a href="https://wa.me/263771946251" target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp: +263771946251</a></li>
+                        <li><a href=" https://wa.me/263771946251 " target="_blank"><i class="fab fa-whatsapp"></i> WhatsApp: +263771946251</a></li>
                         <li><a href="tel:+263771946251"><i class="fas fa-phone"></i> Direct Call: +263771946251</a></li>
-                        <li><a href="https://www.instagram.com/uncensored_fx" target="_blank"><i class="fab fa-instagram"></i> Instagram: @uncensored_fx</a></li>
-                        <li><a href="https://tiktok.com/@uncensored_scalper" target="_blank"><i class="fab fa-tiktok"></i> TikTok: @uncensored_scalper</a></li>
+                        <li><a href="https://www.instagram.com/uncensored_fx " target="_blank"><i class="fab fa-instagram"></i> Instagram: @uncensored_fx</a></li>
+                        <li><a href="https://tiktok.com/@uncensored_scalper " target="_blank"><i class="fab fa-tiktok"></i> TikTok: @uncensored_scalper</a></li>
                     </ul>
                 </div>
                 
@@ -822,62 +964,207 @@
     </div>
 
     <script>
-        // Payment Modal Functionality
-        const modal = document.getElementById('paymentModal');
-        const enrollBtns = document.querySelectorAll('.enroll-btn');
-        const coursePriceSpan = document.getElementById('coursePrice');
-        const backBtn = document.getElementById('backBtn');
-        const whatsappBtn = document.getElementById('whatsappBtn');
-        const ecocashBtn = document.getElementById('ecocashBtn');
+        document.addEventListener('DOMContentLoaded', function() {
+            document.body.style.overflow = 'hidden';
+            initIntro();
 
-        // Current course info
-        let currentCourse = '';
-        let currentPrice = '';
-        const whatsappNumber = '263771946251';
-        const ecocashNumber = '0771946251';
+            // Payment Modal Functionality
+            const modal = document.getElementById('paymentModal');
+            const enrollBtns = document.querySelectorAll('.enroll-btn');
+            const coursePriceSpan = document.getElementById('coursePrice');
+            const backBtn = document.getElementById('backBtn');
+            const whatsappBtn = document.getElementById('whatsappBtn');
+            const ecocashBtn = document.getElementById('ecocashBtn');
 
-        // Open modal when enroll button is clicked
-        enrollBtns.forEach(btn => {
-            btn.addEventListener('click', function() {
-                currentCourse = this.getAttribute('data-course');
-                currentPrice = this.getAttribute('data-price');
-                
-                // Update the course price in modal
-                coursePriceSpan.textContent = currentPrice;
-                
-                // Show modal
-                modal.style.display = 'block';
-                document.body.style.overflow = 'hidden'; // Prevent scrolling
+            // Current course info
+            let currentCourse = '';
+            let currentPrice = '';
+            const whatsappNumber = '263771946251';
+            const ecocashNumber = '0771946251';
+
+            // Open modal when enroll button is clicked
+            enrollBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    currentCourse = this.getAttribute('data-course');
+                    currentPrice = this.getAttribute('data-price');
+                    
+                    // Update the course price in modal
+                    coursePriceSpan.textContent = currentPrice;
+                    
+                    // Show modal
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden'; // Prevent scrolling
+                });
+            });
+            
+            // Close modal when back button is clicked
+            backBtn.addEventListener('click', function() {
+                modal.style.display = 'none';
+                document.body.style.overflow = 'auto'; // Enable scrolling
+            });
+            
+            // Close modal when clicking outside of modal content
+            window.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // WhatsApp button functionality
+            whatsappBtn.addEventListener('click', function() {
+                const message = `Hello Equity Syndicate, I am interested in the ${currentCourse} package priced at $${currentPrice}. My name is [Your Full Name].`;
+                const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
+                window.open(whatsappUrl, '_blank');
+            });
+
+            // EcoCash auto-dial button functionality
+            ecocashBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                const ecocashUrl = `tel:*153*1*1*${ecocashNumber}*${currentPrice}#`;
+                window.location.href = ecocashUrl;
             });
         });
-        
-        // Close modal when back button is clicked
-        backBtn.addEventListener('click', function() {
-            modal.style.display = 'none';
-            document.body.style.overflow = 'auto'; // Enable scrolling
-        });
-        
-        // Close modal when clicking outside of modal content
-        window.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                modal.style.display = 'none';
-                document.body.style.overflow = 'auto';
-            }
-        });
-        
-        // WhatsApp button functionality
-        whatsappBtn.addEventListener('click', function() {
-            const message = `Hello Equity Syndicate, I am interested in the ${currentCourse} package priced at $${currentPrice}. My name is [Your Full Name].`;
-            const whatsappUrl = `https://wa.me/${whatsappNumber}?text=${encodeURIComponent(message)}`;
-            window.open(whatsappUrl, '_blank');
-        });
 
-        // EcoCash auto-dial button functionality
-        ecocashBtn.addEventListener('click', function(e) {
-            e.preventDefault();
-            const ecocashUrl = `tel:*153*1*1*${ecocashNumber}*${currentPrice}#`;
-            window.location.href = ecocashUrl;
-        });
+        function initIntro() {
+            const canvas = document.getElementById('candlestickCanvas');
+            const ctx = canvas.getContext('2d');
+            const loadingProgress = document.getElementById('loadingProgress');
+            const introOverlay = document.getElementById('introOverlay');
+
+            function resizeCanvas() {
+                const dpr = window.devicePixelRatio || 1;
+                const rect = canvas.getBoundingClientRect();
+                canvas.width = rect.width * dpr;
+                canvas.height = rect.height * dpr;
+                ctx.scale(dpr, dpr);
+                drawChartGrid();
+            }
+
+            function drawChartGrid() {
+                ctx.clearRect(0, 0, canvas.width, canvas.height);
+                const width = canvas.clientWidth;
+                const height = canvas.clientHeight;
+                const gridColor = 'rgba(255, 255, 255, 0.04)';
+
+                ctx.strokeStyle = gridColor;
+                ctx.lineWidth = 1;
+
+                for (let x = 0; x < width; x += width / 8) {
+                    ctx.beginPath();
+                    ctx.moveTo(x, 0);
+                    ctx.lineTo(x, height);
+                    ctx.stroke();
+                }
+
+                for (let y = 0; y < height; y += height / 5) {
+                    ctx.beginPath();
+                    ctx.moveTo(0, y);
+                    ctx.lineTo(width, y);
+                    ctx.stroke();
+                }
+            }
+
+            const candleWidth = 18;
+            const candleGap = 8;
+            let offsetX = 0;
+            let candles = [];
+            let lastClose = 1.0800;
+
+            function generateCandle(prevClose) {
+                const pipSize = 0.0001;
+                const trendBias = Math.random() > 0.6 ? 1 : -1;
+                let open = prevClose + (Math.random() - 0.5) * 5 * pipSize;
+                let close = open + trendBias * (5 + Math.random() * 15) * pipSize;
+                let high = Math.max(open, close) + Math.random() * 8 * pipSize;
+                let low = Math.min(open, close) - Math.random() * 8 * pipSize;
+
+                if (Math.abs(close - open) < 3 * pipSize) {
+                    close = open + (Math.random() > 0.5 ? 1 : -1) * 3 * pipSize;
+                }
+
+                return {
+                    open: parseFloat(open.toFixed(4)),
+                    close: parseFloat(close.toFixed(4)),
+                    high: parseFloat(high.toFixed(4)),
+                    low: parseFloat(low.toFixed(4))
+                };
+            }
+
+            for (let i = 0; i < 100; i++) {
+                let candle = generateCandle(lastClose);
+                lastClose = candle.close;
+                candles.push(candle);
+            }
+
+            function drawCandle(x, candle) {
+                const isBullish = candle.close > candle.open;
+                const bodyTop = Math.min(candle.open, candle.close);
+                const bodyBottom = Math.max(candle.open, candle.close);
+                const scaleY = 8000;
+
+                const height = canvas.clientHeight;
+                const bodyHeight = (bodyBottom - bodyTop) * scaleY;
+                const bodyY = height * 0.7 - (bodyTop - 1.0750) * scaleY;
+                const wickTop = height * 0.7 - (candle.high - 1.0750) * scaleY;
+                const wickBottom = height * 0.7 - (candle.low - 1.0750) * scaleY;
+
+                const bodyColor = isBullish ? 'rgba(0, 243, 255, 0.9)' : 'rgba(255, 42, 109, 0.9)';
+                const wickColor = isBullish ? 'rgba(0, 243, 255, 0.95)' : 'rgba(255, 42, 109, 0.95)';
+
+                ctx.beginPath();
+                ctx.strokeStyle = wickColor;
+                ctx.lineWidth = 2.5;
+                ctx.moveTo(x + candleWidth / 2, wickTop);
+                ctx.lineTo(x + candleWidth / 2, wickBottom);
+                ctx.stroke();
+
+                ctx.fillStyle = bodyColor;
+                ctx.fillRect(x, bodyY, candleWidth, bodyHeight);
+
+                ctx.strokeStyle = isBullish ? 'rgba(0, 255, 255, 0.7)' : 'rgba(255, 100, 150, 0.7)';
+                ctx.lineWidth = 1.5;
+                ctx.strokeRect(x + 0.5, bodyY + 0.5, candleWidth - 1, bodyHeight - 1);
+            }
+
+            function animate() {
+                drawChartGrid();
+                offsetX -= 0.8;
+
+                if (Math.abs(offsetX) > (candleWidth + candleGap)) {
+                    offsetX += candleWidth + candleGap;
+                    candles.shift();
+                    candles.push(generateCandle(candles[candles.length - 1].close));
+                }
+
+                for (let i = 0; i < candles.length; i++) {
+                    let x = i * (candleWidth + candleGap) + offsetX;
+                    if (x > -candleWidth && x < canvas.clientWidth) {
+                        drawCandle(x, candles[i]);
+                    }
+                }
+                requestAnimationFrame(animate);
+            }
+
+            function startIntroSequence() {
+                setTimeout(() => {
+                    loadingProgress.style.width = '100%';
+                }, 1000);
+
+                setTimeout(() => {
+                    introOverlay.classList.add('fade-out');
+                    setTimeout(() => {
+                        introOverlay.style.display = 'none';
+                        document.body.style.overflow = 'auto';
+                    }, 1000);
+                }, 4000);
+            }
+
+            resizeCanvas();
+            window.addEventListener('resize', resizeCanvas);
+            animate();
+            startIntroSequence();
+        }
     </script>
 </body>
 </html>
